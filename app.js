@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid');
     let width = 10;
-    let bombAmount = 40;
+    let bombAmount = 10;
     let flags = 0;
     let squares = [];
     let isGameOver = false;
@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 addFlag(square);
             }
         }
+
 
         for (let i = 0; i < squares.length; i++) {
             const isLeftEdge = (i % width === 0);
@@ -124,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const newSquare = document.getElementById(newId);
                 click(newSquare);
             }
-            if (currentId < 90 && !isRightEdge) {
+            if (currentId < 90 && !isLeftEdge) {
                 const newId = squares[parseInt(currentId) - 1 + width].id;
                 const newSquare = document.getElementById(newId);
                 click(newSquare);
@@ -142,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 10)
     }
 
-    function gameOver(square) {
+    function gameOver() {
         isGameOver = true;
         squares.forEach(square => {
             if (square.classList.contains('bomb')) {
