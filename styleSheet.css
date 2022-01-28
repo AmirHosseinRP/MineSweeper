@@ -22,17 +22,17 @@ body {
 }
 
 .bomb {
-    background-image: url("images/Blue.png");
+    background-image: url("images/blue.png");
     background-size: 40px;
 }
 
 .valid {
-    background-image: url("images/Blue.png");
+    background-image: url("images/blue.png");
     background-size: 40px;
 }
 
 .checked {
-    background-image: url("images/Grey.png");
+    background-image: url("images/grey.png");
     background-size: 40px;
 }
 
